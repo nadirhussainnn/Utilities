@@ -1,1 +1,5 @@
-
+Index.js is Server File
+In outermost directory where Index.js Server file is placed execute npm install, npm i mysql, npm cors
+crud-operations contains client side reactJS app
+goto crud-operations and execute npm install 
+in crud-operations and install bootstrap, axios
