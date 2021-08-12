@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <button class="btn btn-primary mt-2" id="getAll">Get All Products</button>
+        <button class="btn btn-primary mt-2" id="getById">Get By Id</button>
+        <button class="btn btn-primary mt-2" id="Post">Add/Post Product</button>
+        <button class="btn btn-primary mt-2" id="Put">Update</button>
+        <button class="btn btn-primary mt-2" id="Delete">Delete</button>
+
+    </div>
+
+    <script>
+
+        const getBtn = document.getElementById("getAll");
+        const getBtnById = document.getElementById("getById");
+        const postBtn = document.getElementById("Post");
+        const putBtn = document.getElementById("Put");
+        const deleteBtn = document.getElementById("Delete");
+
+        window.addEventListener('DOMContentLoaded', () => {
+
+            getBtn.onclick = () => {
+
+                    fetch("http://localhost:5000/api/products").then(resp => resp.json()).then(data => {
+                    console.log(data)
+                })
+            }
+
+            getBtnById.onclick = () => {
+                fetch("http://localhost:5000/api/products/2").then(resp => resp.json()).then(data => {
+                    console.log(data)
+                })
+            }
+
+            postBtn.onclick = () => {
+
+                fetch("http://localhost:5000/api/products", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        product: {
+                            name: "Product2",
+                            imageUrl: "https://i.ibb.co/QdJwgmp/brown-cowboy.png",
+                            price: 451,
+                        }
+                    })
+                }).then((resp) =>resp.json()).then(data=>{
+                    console.log(data);
+                });
+            }
+
+            putBtn.onclick = () => {
+                fetch("http://localhost:5000/api/products/5").then(resp => resp.json()).then(data => {
+                    console.log(data)
+                })
+            }
+
+            deleteBtn.onclick = () => {
+                fetch("http://localhost:5000/api/products/5").then(resp => resp.json()).then(data => {
+                    console.log(data)
+                })
+            }
+
+        })
+    </script>
+</body>
+
+</html>

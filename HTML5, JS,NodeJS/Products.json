@@ -1,0 +1,20 @@
+[
+      {
+        "price": 25,
+        "title": "Brown Brim",
+        "imageUrl": "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+        "id": 1
+      },
+      {
+        "price": 18,
+        "name": "Blue Beanie",
+        "imageUrl": "https://i.ibb.co/ypkgK0X/blue-beanie.png",
+        "id": 2
+      },
+      {
+        "price": 35,
+        "name": "Brown Cowboy",
+        "imageUrl": "https://i.ibb.co/QdJwgmp/brown-cowboy.png",
+        "id": 3
+      }
+]
